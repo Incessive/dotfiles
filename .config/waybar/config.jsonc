@@ -29,12 +29,12 @@
 		"clock#date",
 		"custom/right_div#4",
 		"network",
-		"bluetooth",
+		"custom/notification",
 		"custom/system_update",
-		"custom/right_div#5"
+		"custom/right_div#5",
 	],
 	"modules-right": [
-		"mpris",
+		"tray", /*mpris*/
 		"custom/left_div#6",
 		"group/pulseaudio",
 		"custom/left_div#7",
@@ -75,6 +75,26 @@
 		modules
 	-------------*/
 
+	  "custom/notification": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "<span foreground='red'><sup></sup></span>",
+      "none": "",
+      "dnd-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-none": "",
+      "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-inhibited-none": ""
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  },
 	"backlight": {
 		// "interval":
 		"format": "{icon} {percent}%",
@@ -316,6 +336,11 @@
 		// "dynamic-importance-order":
 		// "min-length":
 		"max-length": 1000
+	},
+
+	"tray": {
+		"icon-size": 20,
+		"max-length": 1000,
 	},
 
 	"network": {

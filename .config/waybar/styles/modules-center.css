@@ -90,3 +90,8 @@
 #custom-right_div.5 {
 	color: @tray;
 }
+#custom-notification {
+	font-family: "NotoSansMono Nerd Font";
+	background-color: @tray;
+	padding: 0 5px;
+}

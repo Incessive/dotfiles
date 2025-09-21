@@ -1,5 +1,13 @@
 @import "../theme.css";
 
+#tray {
+	padding: 0 12px;
+	margin: 0 10px;
+}
+#tray > .tray-icon {
+	padding: 3px;
+}
+
 /* media info */
 
 #mpris {
