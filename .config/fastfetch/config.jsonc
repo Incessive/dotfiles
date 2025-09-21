@@ -1,0 +1,66 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+     "logo": {
+         "type": "auto",
+         "padding": {
+            "top": 1,
+            "left": 4
+         },
+         "printRemaining": false,
+         "source": "~/.config/fastfetch/icons/*.png",
+         "width": 26,
+         "height": 13
+     },
+    "display": {
+        "separator": "  - ",
+
+        "color": {
+        "separator": "black",
+        },
+        "constants": [
+            "─────────────────" // {$1}, used in Custom module
+        ],
+        "key": {
+            "type": "icon",
+            "paddingLeft": 2
+        }
+    },
+    "modules": [
+        {
+            "type": "custom", // HardwareStart
+            // {#1} is equivalent to `\u001b[1m`. {#} is equivalent to `\u001b[m`
+            "format": "┌{$1} {#1}Hardware Information{#} {$1}┐"
+        },
+        "cpu",
+        "gpu",
+        "disk",
+        "memory",
+        {
+            "type": "custom", // SoftwareStart
+            "format": "├{$1} {#1}Software Information{#} {$1}┤"
+        },
+        {
+            "type": "title",
+            "key": "User", // Title module has no key by default, so that icon is not displayed
+            "format": "{user-name}@{host-name}"
+        },
+        "os",
+        "kernel",
+        "de",
+        "wm",
+        "terminal",
+        "uptime",
+        {
+            "type": "publicip",
+            "timeout": 1000
+        },
+        {
+            "type": "wifi",
+            "format": "{ssid}"
+        },
+        {
+            "type": "custom", // InformationEnd
+            "format": "└{$1}──────────────────────{$1}┘"
+        }
+    ]
+}
