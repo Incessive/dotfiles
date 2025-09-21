@@ -12,4 +12,4 @@ compinit
 # End of lines added by compinstall
 export PATH=$PATH:/home/pecan/.local/bin
 fastfetch
-eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/catppuccin.omp.json)"
+eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/catppuccin.omp.json)"
