@@ -22,9 +22,9 @@ selected=$(fzf "${options[@]}" <<<"$list")
 [[ -z $selected ]] && exit 0
 
 case "$selected" in
-	'Shutdown') systemctl poweroff ;;
-	'Reboot') systemctl reboot ;;
-	'Logout') hyprctl dispatch exit ;;
-	'Hibernate') systemctl hibernate ;;
-	'Suspend') systemctl suspend ;;
+	'Shutdown') betterdiscordctl uninstall & systemctl poweroff ;;
+	'Reboot') betterdiscordctl uninstall & systemctl reboot ;;
+	'Logout') betterdiscordctl uninstall & hyprctl dispatch exit ;;
+	'Hibernate') betterdiscordctl uninstall & systemctl hibernate ;;
+	'Suspend') betterdiscordctl uninstall & systemctl suspend ;;
 esac

@@ -39,7 +39,7 @@
 	color: @accent;
 }
 #custom-distro {
-	padding: 0 10px 0 5px;
+	padding: 0 6px 0 5px;
 	font-size: 23px;
 	background-color: @accent;
 	color: @main-bg;

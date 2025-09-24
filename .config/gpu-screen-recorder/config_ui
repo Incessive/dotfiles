@@ -35,11 +35,11 @@ record.show_video_paused_notifications true
 record.show_video_saved_notifications true
 record.start_stop_hotkey 94 16
 replay.container mp4
-replay.record_options.advanced_view false
+replay.record_options.advanced_view true
 replay.record_options.application_audio_invert false
 replay.record_options.audio_codec opus
 replay.record_options.audio_track_item false [add_audio_track]
-replay.record_options.audio_track_item false default_output
+replay.record_options.audio_track_item false device:default_output
 replay.record_options.change_video_resolution false
 replay.record_options.codec auto
 replay.record_options.color_range limited
@@ -47,15 +47,15 @@ replay.record_options.fps 60
 replay.record_options.framerate_mode auto
 replay.record_options.merge_audio_tracks true
 replay.record_options.overclock false
-replay.record_options.record_area_height 0
-replay.record_options.record_area_option focused_monitor
-replay.record_options.record_area_width 0
+replay.record_options.record_area_height 1080
+replay.record_options.record_area_option DP-2
+replay.record_options.record_area_width 1920
 replay.record_options.record_cursor true
 replay.record_options.restore_portal_session true
 replay.record_options.video_bitrate 40000
-replay.record_options.video_height 0
+replay.record_options.video_height 1080
 replay.record_options.video_quality custom
-replay.record_options.video_width 0
+replay.record_options.video_width 1920
 replay.replay_storage ram
 replay.restart_replay_on_save false
 replay.save_10_min_hotkey 0 0
@@ -68,7 +68,7 @@ replay.show_replay_started_notifications true
 replay.show_replay_stopped_notifications true
 replay.start_stop_hotkey 0 0
 replay.time 60
-replay.turn_on_replay_automatically_mode dont_turn_on_automatically
+replay.turn_on_replay_automatically_mode turn_on_at_system_startup
 screenshot.change_image_resolution false
 screenshot.image_format jpg
 screenshot.image_height 0
