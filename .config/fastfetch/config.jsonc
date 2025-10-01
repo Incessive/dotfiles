@@ -30,10 +30,22 @@
             // {#1} is equivalent to `\u001b[1m`. {#} is equivalent to `\u001b[m`
             "format": "┌{$1} {#1}Hardware Information{#} {$1}┐"
         },
-        "cpu",
-        "gpu",
-        "disk",
-        "memory",
+        {
+        "type": "cpu",
+        "keyColor": "green"
+        },
+        {
+        "type": "gpu",
+        "keyColor": "green"
+        },
+        {
+        "type": "disk",
+        "keyColor": "green"
+        },
+        {
+        "type": "memory",
+        "keyColor": "green"
+        },
         {
             "type": "custom", // SoftwareStart
             "format": "├{$1} {#1}Software Information{#} {$1}┤"
@@ -41,21 +53,42 @@
         {
             "type": "title",
             "key": "User", // Title module has no key by default, so that icon is not displayed
-            "format": "{user-name}@{host-name}"
+            "format": "{user-name}@{host-name}",
+            "keyColor": "green"
         },
-        "os",
-        "kernel",
-        "de",
-        "wm",
-        "terminal",
-        "uptime",
+        {
+        "type": "os",
+        "keyColor": "green"
+        },
+        {
+        "type": "kernel",
+        "keyColor": "green"
+        },
+        {
+        "type": "de",
+        "keyColor": "green"
+        },
+        {
+        "type": "wm",
+        "keyColor": "green"
+        },
+        {
+        "type": "terminal",
+        "keyColor": "green"
+        },
+        {
+        "type": "uptime",
+        "keyColor": "green"
+        },
         {
             "type": "publicip",
-            "timeout": 1000
+            "timeout": 1000,
+            "keyColor": "green"
         },
         {
             "type": "wifi",
-            "format": "{ssid}"
+            "format": "{ssid}",
+            "keyColor": "green"
         },
         {
             "type": "custom", // InformationEnd

@@ -1,80 +1,194 @@
-@import "styles/modules-center.css";
-@import "styles/modules-left.css";
-@import "styles/modules-right.css";
-@import "theme.css";
+/* colors defined at top for easy configuring */
+@define-color background #2C2A24;
+@define-color second-background #3A372F;
+@define-color text #DDD5C4;
+@define-color borders #A0907A;
+@define-color focused #D08B57;
+@define-color focused2 #BFAA80;
+@define-color color1 #7699A3;
+@define-color color2 #8D7AAE;
+@define-color color3 #78997A;
+@define-color urgent #B05A5A;
 
+
+/* font declared */
 * {
-	font-family: "0xProto Nerd Font";
-	font-weight: bold;
-	font-size: 16px;
-	color: @main-fg;
+    font-family: "Iosevka Nerd Font";
+    font-size: 15px;
+}
+#custom-openbracket,
+#custom-closebracket{
+    margin: 0 5px ;
 }
 
-/* main outline */
-
+/* idk what all this does */
 window#waybar {
-	background-color: @outline;
+    background-color: transparent;
+    border-bottom: 0;
+    color: @text;
+    transition: background-color 0.5s;
+}
+window#waybar.hidden {
+    opacity: 0.2;
+}
+window#waybar.empty #window {
+    background-color: transparent;
 }
 
-/* main background */
 
-window#waybar > box {
-	margin: 4px;
-	background-color: @main-bg;
+/* configuring the modules */
+.modules-left {
+    margin: 10px 0 0 10px;
+    padding: 0 0 0 7px;
+    background-color: @background;
+    border: 2px solid @focused;
+    border-radius: 5px;
+}
+.modules-center {
+    margin: 10px 0 0 0;
+    padding: 0 10px 0 10px;
+    background-color: @background;
+    border: 2px solid @focused;
+    border-radius: 5px;
+}
+.modules-right {
+    margin: 10px 10px 0 0;
+    padding: 0 10px 0 10px;
+    background-color: @background;
+    border: 2px solid @focused;
+    border-radius: 5px;
 }
 
-/* hoverables */
 
-#custom-theme_switcher:hover,
-#idle_inhibitor:hover,
-#clock.date:hover,
-#network:hover,
-#bluetooth:hover,
-#custom-system_update:hover,
-#mpris:hover,
-#pulseaudio:hover {
-	color: @hover-fg;
-}
-
-/* states */
-
-.warning { color: @warning; }
-.critical { color: @critical; }
-.charging { color: @charging; }
-.muted { color: @hover-fg; }
-
-/* dividers */
-
-#custom-left_div,
-#custom-left_inv,
-#custom-right_div,
-#custom-right_inv {
-	font-size: 23.1px;
-}
-
-/* buttons */
-
+/* whats this?? */
 button {
-	border-radius: 16px;
-	padding: 0 10px;
-}
-button:hover {
-	background-color: @hover-bg;
-	color: @hover-fg;
+  border: none;
 }
 
-/* tooltips */
 
-tooltip {
-	border: 2px solid @main-br;
-	border-radius: 10px;
-	background-color: @main-bg;
+/* left island */
+
+/* menu pannel */
+#custom-arch,
+#custom-powerprofile,
+#custom-themeswitcher{
+    padding-right: 10px;
+    padding-left: 5px;
+    font-size: 15px;
+    border-radius: 8px;
 }
-tooltip label {
-	margin: 2px 4px;
-	font-weight: normal;
+#custom-arch:hover {
+    color: @color1;
 }
-tooltip decoration {
-	border: none;
-	background-color: transparent;
+#custom-powerprofile:hover{
+    color: @color1
+}
+#custom-themeswitcher:hover {
+    color: @color1;
+}
+
+/* workspace pannel */
+#workspaces button {
+    padding: 0 2px;
+    background-color: transparent;
+    color: @text;
+    border-radius: 0;
+}
+#workspaces button:hover {
+    background-color: @second-background;
+}
+#workspaces button.active {
+    color: @focused2;
+    background-color: @second-background;
+}
+#workspaces button.urgent {
+    background-color: @urgent;
+}
+
+/* no idea what this does */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+/* media player */
+#mpris {
+    margin: 0 0 0 5px;
+    padding: 0 9px ;
+    background-color: @background;
+    color: @text;
+}
+#mpris.playing {
+    background-color: @color3;
+    border-radius: 2px;
+    color: @background;
+}
+
+
+/* center module  */
+#window{
+    padding: 0 5px;
+}
+
+/* Right Island */
+
+/* module general styles */
+#clock,
+#battery,
+#cpu,
+#memory,
+#custom-clipboard,
+#custom-bluetooth,
+#network {
+  padding: 0 10px ;
+}
+#clock:hover,
+#battery:hover,
+#custom-cpu:hover,
+#custom-clipboard:hover,
+#custom-bluetooth:hover,
+#network:hover,
+#idle_inhibitor:hover,
+#custom-swaync:hover,
+#backlight:hover,
+#custom-calendar:hover,
+#wireplumber:hover{
+    color: @color1;
+}
+#idle_inhibitor{
+  padding: 0 10px 0 0;
+}
+#custom-powerprofile{
+  padding: 0 8px 0 4px;
+}
+/* Remaining Modules */
+#backlight,
+#wireplumber{
+    padding: 0 5px;
+}
+#wireplumber.muted {
+  background-color: @urgent;
+}
+#custom-swaync {
+    padding: 0 10px 0 5px;
+    font-size: 16px;       /* same scale as other icons */
+    color: @text;
+}
+#battery.charging,
+#battery.plugged {
+  background-color: @focused2 ;
+  color: @background;
+}
+#battery.critical:not(.charging) {
+  background-color: @urgent;
+  color: @text;
+  animation: blink 0.5s steps(12) infinite alternate;
+}
+@keyframes blink {
+  to {
+    background-color: @second-background;
+    color: @text;
+  }
 }

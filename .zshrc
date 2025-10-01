@@ -10,6 +10,8 @@ zstyle :compinstall filename '/home/pecan/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+alias yas="yay -Syu"
+alias yar="yay -Rns"
 export PATH=$PATH:/home/p/.local/bin
 fastfetch
 eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/catppuccin.omp.json)"
