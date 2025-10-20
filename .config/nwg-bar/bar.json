@@ -16,7 +16,7 @@
   },
   {
     "label": "Shutdown",
-    "exec": "systemctl -i poweroff",
+    "exec": "systemctl poweroff",
     "icon": "/usr/share/nwg-bar/images/system-shutdown.svg"
   }
 ]
