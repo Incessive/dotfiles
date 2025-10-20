@@ -18,7 +18,7 @@ window#waybar {
 .modules-center,
 .modules-right
 {
-    background: rgba(30, 26, 33, 1.0);
+    background: rgba(0, 0, 8, .25);
     margin: 5px 10px;
     padding: 0 5px;
     border-radius: 15px;
@@ -70,10 +70,10 @@ window#waybar {
 #power-profiles-daemon:hover,
 #language:hover,
 #mpd:hover {
-    background: rgba(169, 102, 217, 0.1);
+    background: rgba(26, 27, 38, 0.9);
 }
 #mpris {
-    background: rgba(169, 102, 217, 0.1);
+    background: #13131d;
     border:none;
     border-radius: 15px;
     margin-left: 6px;
@@ -93,11 +93,11 @@ window#waybar {
 }
 
 #workspaces button.active {
-    background: rgba(169, 102, 217, 0.1);
+    background: #13131d; 
 }
 
 #workspaces button:hover {
-  background: rgba(169, 102, 217, 0.05);
+  background: #11111b;
   color: #cdd6f4;
   box-shadow: none;
 }
@@ -108,3 +108,4 @@ window#waybar {
     font-size: 25px;
     transition: color .5s;
 }
+

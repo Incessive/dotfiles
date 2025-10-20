@@ -8,8 +8,8 @@
          },
          "printRemaining": false,
          "source": "~/.config/fastfetch/icons/*.png",
-         "width": 26,
-         "height": 13
+         "width": 24,
+         "height": 12
      },
     "display": {
         "separator": "  - ",
@@ -32,19 +32,19 @@
         },
         {
         "type": "cpu",
-        "keyColor": "green"
+        "keyColor": "magenta"
         },
         {
         "type": "gpu",
-        "keyColor": "green"
+        "keyColor": "magenta"
         },
         {
         "type": "disk",
-        "keyColor": "green"
+        "keyColor": "magenta"
         },
         {
         "type": "memory",
-        "keyColor": "green"
+        "keyColor": "magenta"
         },
         {
             "type": "custom", // SoftwareStart
@@ -54,41 +54,31 @@
             "type": "title",
             "key": "User", // Title module has no key by default, so that icon is not displayed
             "format": "{user-name}@{host-name}",
-            "keyColor": "green"
+            "keyColor": "magenta"
         },
         {
         "type": "os",
-        "keyColor": "green"
+        "keyColor": "magenta"
         },
         {
         "type": "kernel",
-        "keyColor": "green"
+        "keyColor": "magenta"
         },
         {
         "type": "de",
-        "keyColor": "green"
+        "keyColor": "magenta"
         },
         {
         "type": "wm",
-        "keyColor": "green"
+        "keyColor": "magenta"
         },
         {
         "type": "terminal",
-        "keyColor": "green"
+        "keyColor": "magenta"
         },
         {
         "type": "uptime",
-        "keyColor": "green"
-        },
-        {
-            "type": "publicip",
-            "timeout": 1000,
-            "keyColor": "green"
-        },
-        {
-            "type": "wifi",
-            "format": "{ssid}",
-            "keyColor": "green"
+        "keyColor": "magenta"
         },
         {
             "type": "custom", // InformationEnd
